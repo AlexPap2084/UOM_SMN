@@ -33,10 +33,10 @@ public class TwitterSearch extends AppCompatActivity {
         setContentView(R.layout.activity_twitter);
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("BfXEUVTUWVG3uVrXIiy3xbJJt")
-                .setOAuthConsumerSecret("vecPtkCzp33YaBue15UtG6OcH9esyPQuQLH2etHd6Gd5QAZdvb")
-                .setOAuthAccessToken("1335954314259554304-w3gLieiF97QBUXIrcNyN3FNS3cyiH1")
-                .setOAuthAccessTokenSecret("ClFS1vnCBHMpHoqbGhSpQP3NpTIfHwzGmL1Mg6w1M7V2R");
+                .setOAuthConsumerKey("**************************")
+                .setOAuthConsumerSecret("****************************************************")
+                .setOAuthAccessToken("****************************************************")
+                .setOAuthAccessTokenSecret("****************************************************");
         TwitterFactory tf = new TwitterFactory(cb.build());
         Twitter twitter;
         twitter = tf.getInstance();
