@@ -10,18 +10,25 @@ import twitter4j.Trends;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 
-
-
 public class ListViewTrends {
 
     public ArrayList<String> ListViewTrends(Twitter twitter) throws TwitterException {
         ArrayList<String> trendList = new ArrayList<String>();
-        Trends  trends = twitter.getPlaceTrends(23424833);
-        for(Trend trend :trends.getTrends())
-    {
-        trendList.add(trend.getName());
-    }
+        Trends trends = twitter.getPlaceTrends(23424833);
+        int counter = 0;
+
+            for (Trend trend : trends.getTrends()) {
+                if (counter < 15) {
+                    trendList.add(trend.getName());
+                    counter=counter+1;
+                }
+
+            }
+
         return trendList;
-}
+
+        }
 
 }
+
+
