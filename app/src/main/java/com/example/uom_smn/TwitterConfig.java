@@ -16,8 +16,8 @@ public class TwitterConfig {
         cb.setDebugEnabled(true)
                 .setOAuthConsumerKey("BfXEUVTUWVG3uVrXIiy3xbJJt")
                 .setOAuthConsumerSecret("vecPtkCzp33YaBue15UtG6OcH9esyPQuQLH2etHd6Gd5QAZdvb")
-                .setOAuthAccessToken("1335954314259554304-w3gLieiF97QBUXIrcNyN3FNS3cyiH1")
-                .setOAuthAccessTokenSecret("ClFS1vnCBHMpHoqbGhSpQP3NpTIfHwzGmL1Mg6w1M7V2R");
+                .setOAuthAccessToken("1335954314259554304-Tauw0mFgtjwFQauztODF5yP3ISTXEf")
+                .setOAuthAccessTokenSecret("mJfzpwLGf9YHJE8FuWpH9JI6t7suzYRC3Dou39Hf3UWeN");
         TwitterFactory tf = new TwitterFactory(cb.build());
         this.twitter = tf.getInstance();
 

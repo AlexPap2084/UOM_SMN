@@ -8,6 +8,8 @@ import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -38,12 +40,20 @@ public class ShowTwittePosts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_twitte_posts);
+        Button btnBack = (Button)findViewById(R.id.btnBack);
         TwitterConfig  tw = new TwitterConfig(twitter);
         twitter = tw.getTwitter();
         makePosts make = new makePosts();
         make.execute(twitter);
         ListView PostView =  findViewById(R.id.postTweets);
         postAdapter = new PostArrayAdapter(this,R.layout.post_customization,new ArrayList<Post>(), PostView);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }
@@ -88,8 +98,7 @@ public class ShowTwittePosts extends AppCompatActivity {
                             String url = m.getMediaURL();
                             Bitmap bit = post.getBitmapFromUrl(url);
                             post.setphotoBitmap(bit);
-                            ImageView photo = new ImageView(ShowTwittePosts.this);
-                            post.setPhoto(photo);
+                            post.setPhoto(url);
                             
 
                         }

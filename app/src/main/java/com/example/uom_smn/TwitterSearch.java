@@ -2,9 +2,14 @@ package com.example.uom_smn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -25,24 +30,17 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class TwitterSearch extends AppCompatActivity {
 
-
+    private Twitter twitter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_twitter);
-        ConfigurationBuilder cb = new ConfigurationBuilder();
-        cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("BfXEUVTUWVG3uVrXIiy3xbJJt")
-                .setOAuthConsumerSecret("vecPtkCzp33YaBue15UtG6OcH9esyPQuQLH2etHd6Gd5QAZdvb")
-                .setOAuthAccessToken("1335954314259554304-w3gLieiF97QBUXIrcNyN3FNS3cyiH1")
-                .setOAuthAccessTokenSecret("ClFS1vnCBHMpHoqbGhSpQP3NpTIfHwzGmL1Mg6w1M7V2R");
-        TwitterFactory tf = new TwitterFactory(cb.build());
-        Twitter twitter;
-        twitter = tf.getInstance();
-        TextView simpleSearchView = (TextView) findViewById(R.id.searchView);// inititate a search view
+        TwitterConfig  tw = new TwitterConfig(twitter);
+        twitter = tw.getTwitter();
+        EditText simpleSearchView =  findViewById(R.id.textHash);// inititate a search view
         Button searchBtn  = (Button)findViewById(R.id.btnSearch);
-
+        Button bckButton = (Button)findViewById(R.id.bckButton);
         ListViewTrends trendingList = new ListViewTrends();
         try {
 
@@ -51,26 +49,37 @@ public class TwitterSearch extends AppCompatActivity {
             ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,hastags);
             ListView listView = (ListView) findViewById(R.id.listHashtag);
             listView.setAdapter(adapter);
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String selected = listView.getItemAtPosition(position).toString();
+                    Intent i = new Intent(TwitterSearch.this , ShowTwittePosts.class);
+                    i.putExtra("selected" , selected);
+                    startActivity(i);
+                }
+            });
         } catch (TwitterException e) {
             e.printStackTrace();
         }
 
-        //CharSequence tweetHashSearch = simpleSearchView.getQuery(); // get the query string currently in the text field
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               String selected =  simpleSearchView.getText().toString();
+                Intent i = new Intent(TwitterSearch.this , ShowTwittePosts.class);
+                i.putExtra("selected" , selected);
+                startActivity(i);
+            }
+        });
 
-        /*
-        Query query = new Query("Tsipras");
-        QueryResult result = null;
-        try {
-            result = twitter.search(query);
-        } catch (TwitterException e) {
-            e.printStackTrace();
-        }
-        for (Status status : result.getTweets()) {
-            System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
-        }
-
-        */
-
+        bckButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }

@@ -18,7 +18,7 @@ import java.net.URL;
 
 public class Post {
     private ImageView icon;
-    private ImageView photo;
+    private String photo;
     private String postText;
     private String userName;
     private Bitmap iconBitmap;
@@ -33,7 +33,7 @@ public class Post {
     public ImageView getIcon(){
         return icon;
     }
-    public ImageView getphoto(){
+    public String getphoto(){
         return photo;
     }
     public String getPostText(){
@@ -48,7 +48,7 @@ public class Post {
     public void setIcon(ImageView icon){
         this.icon = icon;
     }
-    public void setPhoto(ImageView photo){
+    public void setPhoto(String photo){
         this.photo = photo;
     }
     public void setphotoBitmap( Bitmap photoBitmap){ this.photoBitmap = photoBitmap; }

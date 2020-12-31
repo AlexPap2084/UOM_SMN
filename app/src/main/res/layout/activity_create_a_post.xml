@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAPost">
+
+    <Button
+        android:id="@+id/uploadImg"
+        android:layout_width="145dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Upload"
+        app:layout_constraintBottom_toBottomOf="@+id/image_clear"
+        app:layout_constraintStart_toEndOf="@+id/image_clear"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadImg"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="@+id/image_clear"
+        app:layout_constraintTop_toBottomOf="@+id/uploadImg"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/messageStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter message"
+        app:layout_constraintEnd_toEndOf="@+id/imageUpload"
+        app:layout_constraintStart_toStartOf="@+id/imageUpload"
+        app:layout_constraintTop_toBottomOf="@+id/imageUpload" />
+
+    <CheckBox
+        android:id="@+id/twitterBox"
+        android:layout_width="102dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Twitter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messageStatus" />
+
+    <CheckBox
+        android:id="@+id/facebookBox"
+        android:layout_width="111dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Facebook"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twitterBox" />
+
+    <CheckBox
+        android:id="@+id/instagramBox"
+        android:layout_width="116dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Instagram"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/facebookBox" />
+
+    <ImageView
+        android:id="@+id/facebook_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/facebookBox"
+        app:layout_constraintStart_toEndOf="@+id/facebookBox"
+        app:layout_constraintTop_toTopOf="@+id/facebookBox"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/twitter_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        app:layout_constraintBottom_toBottomOf="@+id/twitterBox"
+        app:layout_constraintStart_toEndOf="@+id/twitterBox"
+        app:layout_constraintTop_toTopOf="@+id/twitterBox"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/insta_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        app:layout_constraintBottom_toBottomOf="@+id/instagramBox"
+        app:layout_constraintStart_toEndOf="@+id/instagramBox"
+        app:layout_constraintTop_toTopOf="@+id/instagramBox"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/image_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/make_Post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:text="Post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageUpload" />
+</androidx.constraintlayout.widget.ConstraintLayout>
