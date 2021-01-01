@@ -88,7 +88,7 @@ public class ShowTwittePosts extends AppCompatActivity {
 
                 if (status.getRetweetedStatus() != null) {
                     post.setPostText(status.getRetweetedStatus().getText());
-                } else if (status.getRetweetedStatus() == null) {
+                } else {
                     post.setPostText(status.getText());
                 }
 
