@@ -105,6 +105,8 @@ public class CreateAPost extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
 
         loginButton = (LoginButton) findViewById(R.id.login_button);
         shareDialog = new ShareDialog(this);
@@ -199,6 +201,10 @@ public class CreateAPost extends AppCompatActivity {
 
                         shareDialog.show(sharePhotoContent);
                 }
+                if(insta_box.isChecked()){
+                    String type = "image/*";
+                    createInstagramIntent(type,imgFile);
+                }
             }
         });
 
@@ -238,6 +244,23 @@ public class CreateAPost extends AppCompatActivity {
 
                 else
                     Toast.makeText(CreateAPost.this, "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
+    }
+    private void createInstagramIntent(String type, File imgFile){
+
+        // Create the new Intent using the 'Send' action.
+        Intent share = new Intent(Intent.ACTION_SEND);
+
+        // Set the MIME type
+        share.setType(type);
+
+        // Create the URI from the media
+        Uri uri = Uri.fromFile(imgFile);
+
+        // Add the URI to the Intent.
+        share.putExtra(Intent.EXTRA_STREAM, uri);
+
+        // Broadcast the Intent.
+        startActivity(Intent.createChooser(share, "Share to"));
     }
 
 }

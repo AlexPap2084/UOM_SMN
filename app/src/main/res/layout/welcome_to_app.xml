@@ -10,9 +10,10 @@
         android:id="@+id/btntwitt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="248dp"
         android:text="Twitter Search"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,24 +21,23 @@
         android:id="@+id/btnPost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="208dp"
         android:text="Create a Post"
-        app:layout_constraintBottom_toTopOf="@+id/btnStory"
         app:layout_constraintEnd_toEndOf="@+id/btntwitt"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="@+id/btntwitt"
-        app:layout_constraintTop_toBottomOf="@+id/btntwitt"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintTop_toBottomOf="@+id/btntwitt" />
 
-    <Button
-        android:id="@+id/btnStory"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="220dp"
-        android:text="Create a Story"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnPost"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="@+id/btnPost" />
+        android:layout_marginBottom="152dp"
+        android:text="UOM SMN"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btntwitt"
+        app:layout_constraintEnd_toEndOf="@+id/btntwitt"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/btntwitt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
