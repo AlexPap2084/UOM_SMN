@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".CreateAPost">
 
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/insta_icon"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toStartOf="@+id/insta_icon" />
+
     <Button
         android:id="@+id/uploadImg"
         android:layout_width="145dp"
@@ -23,7 +34,7 @@
         android:id="@+id/imageUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="@+id/uploadImg"
         app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="@+id/image_clear"
@@ -143,4 +154,5 @@
         android:text="Πίσω"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

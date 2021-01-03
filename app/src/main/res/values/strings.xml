@@ -2,8 +2,11 @@
     <string name="app_name">UOM_SMN</string>
     <string name="action_settings">Settings</string>
 
+
     <string name="com.twitter.sdk.android.COSNUMER_KEY"> BfXEUVTUWVG3uVrXIiy3xbJJt</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">vecPtkCzp33YaBue15UtG6OcH9esyPQuQLH2etHd6Gd5QAZdvb</string>
     <string name="CONSUMER_KEY">BfXEUVTUWVG3uVrXIiy3xbJJt</string>
     <string name="CONSUMER_SECRET">vecPtkCzp33YaBue15UtG6OcH9esyPQuQLH2etHd6Gd5QAZdvb</string>
+    <string name="facebook_app_id">456381579095406</string>
+    <string name="fb_login_protocol_scheme">fb456381579095406</string>
 </resources>

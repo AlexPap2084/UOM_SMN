@@ -11,8 +11,10 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 
 public class ListViewTrends {
+    public ListViewTrends(){
 
-    public ArrayList<String> ListViewTrends(Twitter twitter) throws TwitterException {
+    }
+    public ArrayList<String> ViewTrends(Twitter twitter) throws TwitterException {
         ArrayList<String> trendList = new ArrayList<String>();
         Trends trends = twitter.getPlaceTrends(23424833);
         int counter = 0;
