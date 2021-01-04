@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.text.Editable;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,6 +43,8 @@ public class TwitterSearch extends AppCompatActivity {
         Button searchBtn  = (Button)findViewById(R.id.btnSearch);
         Button bckButton = (Button)findViewById(R.id.bckButton);
         ListViewTrends trendingList = new ListViewTrends();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         try {
 

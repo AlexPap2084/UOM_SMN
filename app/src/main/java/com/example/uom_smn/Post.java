@@ -23,6 +23,7 @@ public class Post {
     private String userName;
     private Bitmap iconBitmap;
     private Bitmap photoBitmap;
+    private long tweetId;
 
     @NonNull
     @Override
@@ -44,6 +45,7 @@ public class Post {
     }
     public Bitmap getIconBitmap(){ return iconBitmap;}
     public Bitmap getPhotoBitmap(){ return photoBitmap;}
+    public long getTweetId(){return tweetId;}
     //Setters
     public void setIcon(ImageView icon){
         this.icon = icon;
@@ -58,7 +60,7 @@ public class Post {
     public void setUserName(String userName){
         this.userName = userName;
     }
-
+    public void setTweetId(long tweetId){ this.tweetId = tweetId;}
     public Bitmap getBitmapFromUrl(String src){
         try {
             URL url = new URL(src);
