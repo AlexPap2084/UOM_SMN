@@ -7,7 +7,7 @@
     tools:context=".ShowTwittePosts">
 
     <ListView
-        android:id="@+id/commentPosts"
+        android:id="@+id/twitterPosts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

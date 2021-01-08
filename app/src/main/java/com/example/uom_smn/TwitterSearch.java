@@ -49,8 +49,8 @@ public class TwitterSearch extends AppCompatActivity {
         try {
 
 
-            ArrayList<String> hastags = trendingList.ViewTrends(twitter);
-            ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,hastags);
+            ArrayList<String> hashtags = trendingList.ViewTrends(twitter);
+            ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,hashtags);
             ListView listView = (ListView) findViewById(R.id.listHashtag);
             listView.setAdapter(adapter);
 

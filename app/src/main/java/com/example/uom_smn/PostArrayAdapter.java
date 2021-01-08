@@ -14,15 +14,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostArrayAdapter extends ArrayAdapter<Post> {
 
-    private List<Post> postList;
+    private List<Post> postList = new ArrayList<>();
     private final LayoutInflater inflater;
     private final int layoutResource;
 
-    private ListView postListView;
+    private final ListView postListView;
 
     public PostArrayAdapter(@NonNull Context context, int resource, @NonNull List<Post> objects, ListView listView){
         super(context, resource, objects);
@@ -30,6 +31,9 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         layoutResource = resource;
         inflater = LayoutInflater.from(context);
         postListView = listView;
+    }
+    public void onItemClick(){
+
     }
 
     @NonNull
@@ -72,6 +76,15 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
 
         }
     }
+
+    @Nullable
+    @Override
+    public Post getItem(int position) {
+        return postList.get(position);
+    }
+
+
+
     @Override
     public int getCount(){
         return postList.size();
