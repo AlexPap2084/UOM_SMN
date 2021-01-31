@@ -91,6 +91,7 @@ public class CreateAPost extends AppCompatActivity {
         Button uploadImg = (Button) findViewById(R.id.uploadImg);
         Button make_Post = (Button) findViewById(R.id.make_Post);
         Button finshBtn = (Button) findViewById(R.id.finishBtn);
+        Button twittMom = (Button)findViewById(R.id.twitMoment);
 
         CheckBox twitter_box = (CheckBox) findViewById(R.id.twitterBox);
         CheckBox facebook_box = (CheckBox) findViewById(R.id.facebookBox);
@@ -193,7 +194,7 @@ public class CreateAPost extends AppCompatActivity {
                     SharePhoto sharePhoto = new SharePhoto.Builder()
                             .setBitmap(imgBitmap)
                             .build();
-
+                    
                     SharePhotoContent sharePhotoContent = new SharePhotoContent.Builder()
                             .addPhoto(sharePhoto)
                             .build();
@@ -207,6 +208,20 @@ public class CreateAPost extends AppCompatActivity {
                 }
             }
         });
+        twittMom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(twitter_box.isChecked()){
+                    String type = "image/*";
+                    createInstagramIntent(type,imgFile);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Sorry , no comments for this post ! ",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
 
     }
     //Overriding methods
