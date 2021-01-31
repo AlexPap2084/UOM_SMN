@@ -20,7 +20,7 @@ public class ListViewTrends {
         int counter = 0;
 
             for (Trend trend : trends.getTrends()) {
-                if (counter < 15) {
+                if (counter < 20) {
                     trendList.add(trend.getName());
                     counter=counter+1;
                 }

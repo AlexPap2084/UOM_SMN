@@ -216,7 +216,7 @@ public class CreateAPost extends AppCompatActivity {
                     createInstagramIntent(type,imgFile);
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"Sorry , no comments for this post ! ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Error , twitter box not checked",Toast.LENGTH_SHORT).show();
                 }
 
             }

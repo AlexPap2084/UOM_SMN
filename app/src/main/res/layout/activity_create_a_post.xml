@@ -21,14 +21,14 @@
         android:id="@+id/uploadImg"
         android:layout_width="145dp"
         android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="5dp"
         android:text="Upload"
         app:layout_constraintBottom_toBottomOf="@+id/image_clear"
         app:layout_constraintStart_toEndOf="@+id/image_clear"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.454" />
 
     <ImageView
         android:id="@+id/imageUpload"
@@ -154,5 +154,17 @@
         android:text="Πίσω"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/twitMoment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:text="Moment"
+        app:layout_constraintBottom_toBottomOf="@+id/twitter_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/twitter_icon"
+        app:layout_constraintVertical_bias="0.769" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
