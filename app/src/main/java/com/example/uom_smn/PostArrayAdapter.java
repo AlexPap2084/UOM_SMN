@@ -32,9 +32,7 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         inflater = LayoutInflater.from(context);
         postListView = listView;
     }
-    public void onItemClick(){
 
-    }
 
     @NonNull
     @Override

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -14,6 +15,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
@@ -136,10 +140,11 @@ public class ShowTwittePosts extends AppCompatActivity {
                         MediaEntity[] media = status.getMediaEntities(); //get the media entities from the status
                         //search trough your entities
                         for (MediaEntity m : media) {
-                            String url = m.getMediaURL();
-                            Bitmap bit = post.getBitmapFromUrl(url);
-                            post.setphotoBitmap(bit);
-                            post.setPhoto(url);
+                            if(m.getType().equals("photo")){
+                                String url = m.getMediaURL();
+                                post.getBitmapFromURL(url);
+                            }
+
                         }
 
                 postList.add(post);

@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 
 public class Post {
     private ImageView icon;
@@ -61,20 +62,21 @@ public class Post {
         this.userName = userName;
     }
     public void setTweetId(long tweetId){ this.tweetId = tweetId;}
-    public Bitmap getBitmapFromUrl(String src){
+
+    public void getBitmapFromURL(String imgUrl) {
         try {
-            URL url = new URL(src);
+            URL url = new URL(imgUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoInput(true);
             connection.connect();
             InputStream input = connection.getInputStream();
             Bitmap myBitmap = BitmapFactory.decodeStream(input);
-            return myBitmap;
+            System.out.println(myBitmap + " bitmap");
+            this.setphotoBitmap(myBitmap);
         } catch (IOException e) {
             // Log exception
-            return null;
+
         }
     }
-
 
 }
